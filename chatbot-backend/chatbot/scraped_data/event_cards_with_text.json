@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Tomorrowland Immersive Experience",
+        "url": "https://immersive.tomorrowland.com/",
+        "date": "Extended until March 16, 2025",
+        "location": "Movistar Arena - Madrid, Spain",
+        "additional_links": {
+            "tickets": "https://tomorrowlandimmersive.seetickets.com/tour/tomorrowland-immersive-madrid"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864049",
+        "page_text": ""
+    },
+    {
+        "title": "Terra Solis: Mau P & Rivo",
+        "url": "https://www.terrasolisdubai.com/en/events",
+        "date": "February 1, 2025",
+        "location": "Terra Solis, Dubai - UAE",
+        "additional_links": {
+            "tickets": "https://dubai.platinumlist.net/event-tickets/96910/maup-and-rivo"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864218",
+        "page_text": ""
+    },
+    {
+        "title": "CORE Medellín",
+        "url": "https://www.core.world/events/core-medellin",
+        "date": "February 14 & 15, 2025",
+        "location": "Medellín, Colombia",
+        "additional_links": {
+            "tickets": "https://www.tuboleta.com/images/Eventos/core-medellin/home.html"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864334",
+        "page_text": ""
+    },
+    {
+        "title": "Terra Solis: Sonny Fodera",
+        "url": "https://www.terrasolisdubai.com/en/events",
+        "date": "February 22, 2025",
+        "location": "Terra Solis, Dubai - UAE",
+        "additional_links": {},
+        "scraped_at": "2025-01-29T12:07:51.864443",
+        "page_text": ""
+    },
+    {
+        "title": "Tomorrowland Winter",
+        "url": "https://winter.tomorrowland.com/",
+        "date": "March 15-22, 2025",
+        "location": "Alpe d'Huez, France",
+        "additional_links": {
+            "tickets": "https://winter.tomorrowland.com/en/packages-tickets/"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864558",
+        "page_text": ""
+    },
+    {
+        "title": "Tomorrowland Belgium",
+        "url": "https://belgium.tomorrowland.com/",
+        "date": "July 18-20 & July 25-27, 2025",
+        "location": "Boom, Belgium",
+        "additional_links": {
+            "pre-register": "https://my.tomorrowland.com"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864714",
+        "page_text": ""
+    },
+    {
+        "title": "Love Tomorrow Summit",
+        "url": "https://lovetomorrow.com/love-tomorrow-summit/",
+        "date": "July 24, 2025",
+        "location": "Boom, Belgium",
+        "additional_links": {},
+        "scraped_at": "2025-01-29T12:07:51.864831",
+        "page_text": ""
+    },
+    {
+        "title": "Tomorrowland Brasil",
+        "url": "https://brasil.tomorrowland.com/pt/",
+        "date": "October 10-12, 2025",
+        "location": "Itu (São Paulo), Brazil",
+        "additional_links": {
+            "pre-register": "https://my.tomorrowland.com"
+        },
+        "scraped_at": "2025-01-29T12:07:51.864946",
+        "page_text": ""
+    }
+]
