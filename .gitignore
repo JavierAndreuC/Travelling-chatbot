@@ -1,2 +1,21 @@
+# Virtual environments
+.env/
+env/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+*.egg
+
+# Environment variables
 .env
-env
+.env.local
+
+# Node
+node_modules/
+dist/
