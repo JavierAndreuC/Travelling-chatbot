@@ -21,27 +21,6 @@ model = ChatOpenAI(
     openai_api_key=os.getenv("OPENAI_API_KEY")
 )
 
-# Load JSON Data
-with open("chatbot/scraped_data/event_cards_with_text.json", "r", encoding="utf-8") as file:
-    data = json.load(file)
-
-# Extract relevant text and URLs
-documents = []
-for entry in data:
-    content = f"Title: {entry['title']}\nDate: {entry['date']}\nLocation: {entry['location']}\nURL: {entry['url']}\nInfo: {entry['page_text'][:500]}"  # Limit text size
-    documents.append(content)
-
-# Split text for better vector search
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-texts = text_splitter.split_text("\n".join(documents))
-
-# Convert documents to vectors for retrieval
-embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
-vectorstore = FAISS.from_texts(texts, embeddings)
-
-# Load retriever
-retriever = vectorstore.as_retriever()
-
 # Set up search functionalities for the model
 search = DuckDuckGoSearchResults()
 
@@ -53,33 +32,18 @@ def fetch_latest_information(query):
 # Prompt template
 prompt_template = ChatPromptTemplate.from_messages([
     ("system", """
-    You are a knowledgeable and professional assistant specializing in the music entertainment industry, with a focus on the Tomorrowland festival. 
+    You are a smart and helpful Flight and Travel Assistant chatbot. Your primary role is to help users with their travel-related needs, including finding flights, tracking delays, checking visa and entry requirements, and recommending hotels and car rentals.
 
-    Your goal is to provide users with the most up-to-date and detailed information about Tomorrowland, including:
-    - Event dates, locations, and schedules
-    - Lineups, artists, and stage details
-    - Tickets, travel packages, and accommodations
-    - Festival experiences, attractions, and special events
-    - Official announcements and latest updates
+    You provide real-time and accurate responses by fetching data from reliable APIs such as Skyscanner, FlightAware, and Amadeus. If a user asks for flight prices, you check Skyscanner for the best deals. If they need live flight tracking, you use FlightAware. For visa and travel restrictions, you fetch the latest updates from Amadeus.
 
-    To ensure accuracy:
-    1. **Use the most relevant retrieved data** from the official knowledge base.
-    2. **Incorporate real-time search results** for the latest updates.
-    3. **Provide structured and well-formatted responses** with clear and concise details.
+    Your responses should be concise, clear, and traveler-friendly. You can also provide additional tips on airport navigation, baggage policies, and travel hacks when relevant.
 
-    ### **If information is unavailable or unclear:**
-    - **Do NOT speculate** or provide misleading information.
-    - Instead, **redirect the user to an official and relevant source**, such as:
-    - The **official Tomorrowland website**: [https://www.tomorrowland.com]
-    - News platforms covering Tomorrowland (e.g., DJ Mag, Billboard)
-    - Official ticket sales pages or artist announcements
-
-    Always strive to enhance the user's experience by presenting responses in a **structured format** and offering direct links when appropriate.
-    """),
-    ("human", "User question: {question}\n\nRetrieved Knowledge Base Info: {retrieved_data}\n\nLatest Search Results: {search_results}")
+    When a user provides a location, always confirm if they need information for departures, arrivals, or general airport guidance. If flight details are missing, politely ask for the date, airline, and route to provide better assistance.
+     """),
+    ("human", "User question: {question}")
 ])
 
-# Set up chatbot with memory
+############ Set up chatbot with memory ############
 memory = MemorySaver()
 workflow = StateGraph(state_schema=MessagesState)
 
@@ -94,6 +58,8 @@ app = workflow.compile(checkpointer=memory)
 
 config = {"configurable": {"thread_id": "abc123"}} # Thread configuration
 
+################################################
+
 @csrf_exempt # Exempt view from CSRF for dev/test as it is safely hosted locally
 def chat(request):
     if request.method == 'POST':
@@ -103,16 +69,12 @@ def chat(request):
             if not user_input:
                 return JsonResponse({'error': 'No query provided'}, status=400)
             
-            # Retrieve data from the knowledge base
-            retrieved_data = retriever.invoke(user_input)
-
             # Get search results
             search_results = fetch_latest_information(user_input)
 
             # Format the prompt with updated context
             messages = prompt_template.format_messages(
                 question=user_input, 
-                retrieved_data="\n".join([doc.page_content for doc in retrieved_data[:]]),  # Limit to 4 most relevant results
                 search_results=search_results
             )
 
