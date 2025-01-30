@@ -56,7 +56,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
-ROOT_URLCONF = 'tomorrowland_guide.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tomorrowland_guide.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 
 # Database
