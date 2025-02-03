@@ -88,7 +88,7 @@ Skyscanner API
 	•	📱 Create a mobile-friendly UI for better user experience.
 	•	🧠 Enhance AI responses using GPT-based contextual understanding.
 
-👨‍💻 Contributing
+👨‍💻 Contributing:
 	1.	Fork the repo
 	2.	Create a new branch
 	3.	Make your changes
