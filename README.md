@@ -15,28 +15,27 @@ This is a Flight and Travel Assistant Chatbot that helps users find flights, tra
 
 1️⃣ Clone the Repository
 
+```
 git clone https://github.com/your-username/flight-travel-chatbot.git
 cd flight-travel-chatbot
-
+```
 2️⃣ Create a Virtual Environment (Python Backend)
-
+```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
+```
 3️⃣ Install Dependencies
-
+```
 pip install -r requirements.txt
-
+```
 4️⃣ Set Up Environment Variables
 
 Create a .env file in the root directory and add your API credentials:
-
+```
 OPENAI_API_KEY=your_openai_api_key
-
 AMADEUS_API_KEY=your_amadeus_api_key
-
 AMADEUS_API_SECRET=your_amadeus_api_secret
-
+```
 
 Ensure your .env file is ignored in .gitignore to prevent exposing credentials.
 
