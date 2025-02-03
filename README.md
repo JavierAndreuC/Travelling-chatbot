@@ -1,5 +1,3 @@
-Here’s a README.md file for your Flight and Travel Assistant Chatbot project based on your setup:
-
 ✈️ Flight and Travel Assistant Chatbot
 
 This is a Flight and Travel Assistant Chatbot that helps users find flights, track delays, check visa and entry requirements, and recommend hotels and car rentals. The chatbot integrates with real-time APIs like Amadeus, FlightAware, and Skyscanner to provide accurate travel information.
