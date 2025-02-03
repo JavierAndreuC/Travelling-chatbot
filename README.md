@@ -1,4 +1,4 @@
-# This is a work in progress
+ma# This is a work in progress
 
 ✈️ Flight and Travel Assistant Chatbot
 
@@ -89,10 +89,10 @@ Skyscanner API
 	•	🧠 Enhance AI responses using GPT-based contextual understanding.
 
 👨‍💻 Contributing:
-	1.	Fork the repo
-	2.	Create a new branch
-	3.	Make your changes
-	4.	Submit a pull request
+1.	Fork the repo
+2.	Create a new branch
+3.	Make your changes
+4.	Submit a pull request
 
 📜 License
 
