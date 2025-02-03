@@ -1,3 +1,5 @@
+# This is a work in progress
+
 ✈️ Flight and Travel Assistant Chatbot
 
 This is a Flight and Travel Assistant Chatbot that helps users find flights, track delays, check visa and entry requirements, and recommend hotels and car rentals. The chatbot integrates with real-time APIs like Amadeus, FlightAware, and Skyscanner to provide accurate travel information.
@@ -38,8 +40,12 @@ AMADEUS_API_SECRET=your_amadeus_api_secret
 Ensure your .env file is ignored in .gitignore to prevent exposing credentials.
 
 🔥 Running the Chatbot
+
+First run the backend:
 ```
-python main.py
+cd chatbot-backend
+source ../venv/bin/activate # set and activate venv for backend
+python manage.py runserver
 ```
 To run the frontend navigate to the frontend directory and start the app:
 ```
