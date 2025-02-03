@@ -14,7 +14,7 @@ This is a Flight and Travel Assistant Chatbot that helps users find flights, tra
 1️⃣ Clone the Repository
 
 ```
-git clone https://github.com/your-username/flight-travel-chatbot.git
+git clone https://github.com/JavierAndreuC/Travelling-chatbot.git
 cd flight-travel-chatbot
 ```
 2️⃣ Create a Virtual Environment (Python Backend)
