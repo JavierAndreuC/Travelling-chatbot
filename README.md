@@ -31,9 +31,12 @@ pip install -r requirements.txt
 
 Create a .env file in the root directory and add your API credentials:
 
-OPENAI_API_KEY=your_openai_api_key \n
-AMADEUS_API_KEY=your_amadeus_api_key \n
-AMADEUS_API_SECRET=your_amadeus_api_secret \n
+OPENAI_API_KEY=your_openai_api_key
+
+AMADEUS_API_KEY=your_amadeus_api_key
+
+AMADEUS_API_SECRET=your_amadeus_api_secret
+
 
 Ensure your .env file is ignored in .gitignore to prevent exposing credentials.
 
