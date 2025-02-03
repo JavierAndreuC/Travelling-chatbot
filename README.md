@@ -40,15 +40,15 @@ AMADEUS_API_SECRET=your_amadeus_api_secret
 Ensure your .env file is ignored in .gitignore to prevent exposing credentials.
 
 🔥 Running the Chatbot
-
+```
 python main.py
-
-If using a frontend, navigate to the frontend directory and start the app:
-
+```
+To run the frontend navigate to the frontend directory and start the app:
+```
 cd chatbot-frontend
 npm install
 npm run dev  # If using Vite
-
+```
 🛜 API Integration
 
 Amadeus API
@@ -65,11 +65,11 @@ Skyscanner API
 	•	Used for flight pricing and booking.
 
 📂 Project Structure
-
+```
 /flight-travel-chatbot
 │── chatbot-backend/
 │   ├── main.py  # Backend logic
-│   ├── api.py  # API requests
+│   ├── views.py  # API requests
 │   ├── config.py  # Configuration settings
 │── chatbot-frontend/
 │   ├── src/
@@ -77,7 +77,8 @@ Skyscanner API
 │── .env  # API credentials (ignored by Git)
 │── .gitignore
 │── README.md  # Project documentation
-
+│── requirements.txt # Project dependencies
+```
 🛠️ Future Enhancements
 	•	📡 Add support for additional APIs (Google Maps, Uber, etc.)
 	•	📱 Create a mobile-friendly UI for better user experience.
